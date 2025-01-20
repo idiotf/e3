@@ -1,11 +1,13 @@
-import * as E3Module from './e3'
+import * as _ from './e3'
 
 Object.defineProperties(self, {
-  E3: { value: E3Module.default },
-  E3RouterEvent: { value: E3Module.E3RouterEvent },
-  E3RouterErrorEvent: { value: E3Module.E3RouterErrorEvent },
+  E3: { value: _.default },
+  E3RouterEvent: { value: _.E3RouterEvent },
+  E3RouterErrorEvent: { value: _.E3RouterErrorEvent },
 })
 
 declare global {
-  class E3 extends E3Module.default {}
+  class E3 extends _.default {}
+  class E3RouterEvent extends _.E3RouterEvent {}
+  class E3RouterErrorEvent extends _.E3RouterErrorEvent {}
 }

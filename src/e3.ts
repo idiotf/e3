@@ -16,13 +16,9 @@ export interface E3RouterError extends E3Router {
   error: Error
 }
 
-export class E3RouterEvent extends CustomEvent<E3Router> {
+export class E3RouterEvent extends CustomEvent<E3Router> {}
 
-}
-
-export class E3RouterErrorEvent extends CustomEvent<E3RouterError> {
-
-}
+export class E3RouterErrorEvent extends CustomEvent<E3RouterError> {}
 
 interface EntryProps {
   initialProps: {
@@ -95,101 +91,7 @@ export default class E3 extends EventTarget {
   }
 
   async *qna(params: Partial<CommunityParams>): AsyncGenerator<QnaList, void, void> {
-    const query = `query SELECT_QNA_LIST(
-$pageParam:PageParam
-$query:String
-$user:String
-$category:String
-$term:String
-$prefix:String
-$progress:String
-$discussType:String
-$searchType:String
-$searchAfter:JSON
-$tag:String
-){
-discussList(
-pageParam:$pageParam
-query:$query
-user:$user
-category:$category
-term:$term
-prefix:$prefix
-progress:$progress
-discussType:$discussType
-searchType:$searchType
-searchAfter:$searchAfter
-tag:$tag
-){
-total
-list{
-id
-title
-created
-commentsLength
-likesLength
-visit
-user{
-id
-nickname
-username
-profileImage{
-id
-name
-label{
-ko
-en
-ja
-vn
-}
-filename
-imageType
-dimension{
-width
-height
-}
-trimmed{
-filename
-width
-height
-}
-}
-status{
-following
-follower
-}
-description
-role
-mark{
-id
-name
-label{
-ko
-en
-ja
-vn
-}
-filename
-imageType
-dimension{
-width
-height
-}
-trimmed{
-filename
-width
-height
-}
-}
-}
-bestComment{
-content
-}
-thumbnail
-}
-searchAfter
-}
-}`
+    const query = 'query SELECT_QNA_LIST(\n$pageParam:PageParam\n$query:String\n$user:String\n$category:String\n$term:String\n$prefix:String\n$progress:String\n$discussType:String\n$searchType:String\n$searchAfter:JSON\n$tag:String\n){\ndiscussList(\npageParam:$pageParam\nquery:$query\nuser:$user\ncategory:$category\nterm:$term\nprefix:$prefix\nprogress:$progress\ndiscussType:$discussType\nsearchType:$searchType\nsearchAfter:$searchAfter\ntag:$tag\n){\ntotal\nlist{\nid\ntitle\ncreated\ncommentsLength\nlikesLength\nvisit\nuser{\nid\nnickname\nusername\nprofileImage{\nid\nname\nlabel{\nko\nen\nja\nvn\n}\nfilename\nimageType\ndimension{\nwidth\nheight\n}\ntrimmed{\nfilename\nwidth\nheight\n}\n}\nstatus{\nfollowing\nfollower\n}\ndescription\nrole\nmark{\nid\nname\nlabel{\nko\nen\nja\nvn\n}\nfilename\nimageType\ndimension{\nwidth\nheight\n}\ntrimmed{\nfilename\nwidth\nheight\n}\n}\n}\nbestComment{\ncontent\n}\nthumbnail\n}\nsearchAfter\n}\n}'
     const variables = {
       category: 'qna',
       searchType: 'page',

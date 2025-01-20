@@ -23,7 +23,8 @@
     }
   },
   "scripts": {
-    "build": "tsc"
+    "build": "webpack",
+    "prepack": "webpack"
   },
   "types": "index.d.ts",
   "devDependencies": {
