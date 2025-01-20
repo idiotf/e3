@@ -1,0 +1,36 @@
+{
+  "name": "e3",
+  "version": "0.0.1",
+  "description": "Entry Extension Engine",
+  "keywords": [
+    "entry"
+  ],
+  "homepage": "https://github.com/idiotf/e3#readme",
+  "bugs": {
+    "url": "https://github.com/idiotf/e3/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idiotf/e3.git"
+  },
+  "license": "ISC",
+  "author": "aqu3180",
+  "type": "commonjs",
+  "main": "index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "types": "index.d.ts",
+  "devDependencies": {
+    "next": "^14.1.0",
+    "ts-loader": "^9.5.2",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
+  }
+}
