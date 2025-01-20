@@ -16,17 +16,12 @@
   "license": "ISC",
   "author": "aqu3180",
   "type": "commonjs",
-  "main": "index.js",
-  "exports": {
-    ".": {
-      "import": "./dist/esm/index.js"
-    }
-  },
+  "main": "dist/index.js",
   "scripts": {
     "build": "webpack",
     "prepack": "webpack"
   },
-  "types": "index.d.ts",
+  "types": "dist/index.d.ts",
   "dependencies": {
     "next": "^14.1.0"
   },
